@@ -1,3 +1,33 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.game {
+background-color: rgba(192 192 182, 0.7);
+height: 500px;
+}
+
+/*@font-face {
+  font-family: 'Heart Breaking Bad';
+  src: url("../images/heartbb.otf") format('otf');
+}*/
+
 body, button {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "East Sea Dokdo", cursive;
+}
+
+body {
+  min-height: 100%;
+  background-image: url("../images/bbwallpaper2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  color: green;
 }
