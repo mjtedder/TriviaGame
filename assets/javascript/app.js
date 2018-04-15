@@ -10,10 +10,10 @@ game.answers = {
   incorrect: 0
 };
 game.images = null;
-game.count = 30;
+game.count = 20;
 game.current = 0;
 game.questions = [{
-  question: "What city does the show Breaking Bad take place?",
+  question: "What city does the show take place?",
   choices: ["Des Moines", "Charlotte", "Albuquerque", "Denver"],
   correct: 2
 }, {
@@ -44,6 +44,14 @@ game.questions = [{
   question: "What is the name of the crooked lawyer Walt & Jesse employs when one of their dealers are arrested?",
   choices: ["Drew Scales", "Phoenix Wright", "Howard Hamlin", "Saul Goodman"],
   correct: 3,
+}, {
+  question: "In season 2, how many people died in the plane crash?",
+  choices: ["100", "2", "345", "167"],
+  correct: 3,
+}, {
+  question:  "When Jesse wanted out, who does Walt take on as his new sidekick?",
+  choices: ["Badger", "Spooge", "Todd", "Gale"],
+  correct: 2,
 }];
 
 //Function for asking questions in game.questions array
@@ -77,7 +85,7 @@ game.timer = function() {
     setTimeout(function() {
       game.nextQ();
     });
-    //Appending time remaining to a div in html
+    //Appending time remaining to the timer div in html
   } else {
     $("#timer").html("Time remaining: " + "00:" + game.count + " secs");
   }
@@ -110,7 +118,7 @@ game.answer = function(correct) {
 return game;
 };
 var Trivia;
-
+//Clears previous game results whens start button is clicked
 $("#start_button").click(function() {
   $(this).hide();
   $('.result').remove();
@@ -133,6 +141,7 @@ $('#choices_div').on('click', 'button', function() {
   } else {
     $('#choices_div').text("You're goddamn right!!! The correct answer was: " + correct);
     game.answer(true);
+    //FYI this is a famous quote that Walt says in the show, just staying true to my theme//
   }
   game.nextQ();
 });

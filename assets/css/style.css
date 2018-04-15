@@ -1,3 +1,7 @@
+/*todo: Add more styling, bordered boxes around selections*/
+/*todo: Add images to game area*/
+/*todo: Try to get font downloaded displaying on page*/
+
 html {
   height: 100%;
   width: 100%;
@@ -6,8 +10,12 @@ html {
 }
 
 h1 {
+  font-family: "East Sea Dokdo", cursive;
   text-align: center;
   font-weight: bold;
+  color: green;
+  font-size: 50px;
+  float: right;
 }
 
 .game {
@@ -15,19 +23,24 @@ background-color: rgba(192 192 182, 0.7);
 height: 500px;
 }
 
+/*Tried to link a truetype font downloaded from web
 /*@font-face {
   font-family: 'Heart Breaking Bad';
   src: url("../images/heartbb.otf") format('otf');
 }*/
 
-body, button {
+button {
   font-family: "East Sea Dokdo", cursive;
+  color: green;
+  font-size: 30px;
 }
 
 body {
+  font-family: "East Sea Dokdo", cursive;
   min-height: 100%;
   background-image: url("../images/bbwallpaper2.jpg");
   background-repeat: no-repeat;
   background-size: 100% 110%;
-  color: green;
+  color: white;
+  font-size: 30px;
 }
