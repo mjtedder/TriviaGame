@@ -1,8 +1,10 @@
 //todo: add images after each question is correctly or incorrectly answered
 //todo: randomize questions
 
-var quizArea = $('#quiz-area')
+// WHERE GAME APPEARS IN HTML
+var quizArea = $('#question-div')
 
+// QUESTIONS ARRAY OF OBJECTS
 var questions = [{
     question: "What city does the show take place?",
     choices: ["Des Moines", "Charlotte", "Albuquerque", "Denver"],
@@ -47,95 +49,33 @@ var questions = [{
   }
 ];
 
+// VARIABLE TO HOLD JS SETINTERVAL METHOD
+var timer;
 
-//Function for asking questions in game.questions array
-game.ask = function () {
-  if (game.questions[game.current]) {
-    $("#timer").html("Time remaining: " + "00:" + game.count + " secs");
-    $("#question_div").html(game.questions[game.current].question);
-    var choicesArr = game.questions[game.current].choices;
-    var buttonsArr = [];
-    //Looping through choices in the array and appending to a button element
-    for (var i = 0; i < choicesArr.length; i++) {
-      var button = $('<button>');
-      button.text(choicesArr[i]);
-      button.attr('data-id', i);
-      $('#choices_div').append(button);
+// GAME OBJECT CONTAINING VARIABLES AND METHODS NEEDED TO PLAY
+var game = {
+    correct: 0,
+    incorrect: 0,
+    counter: 120,
+    // Decrements timer and displays in HTML, ends game if counter reaches 0
+    countdown: function() {
+
+    },
+    // Starts timer
+    start: function() {
+      $('#question-div').text("WELCOME!");
+    },
+
+    done: function() {
+
+    },
+
+    result: function() {
+
     }
-    window.triviaCounter = setInterval(game.timer, 1000);
-  } else {
-    $('body').append($('<div />', {
-      text: 'Unanswered: ' + (
-        game.questions.length - (game.answers.correct + game.answers.incorrect)),
-      class: 'result'
-    }));
-    $('#start_button').text('Restart').appendTo('body').show();
   }
-};
-//Function for timer
-game.timer = function () {
-  game.count--;
-  if (game.count <= 0) {
-    setTimeout(function () {
-      game.nextQ();
-    });
-    //Appending time remaining to the timer div in html
-  } else {
-    $("#timer").html("Time remaining: " + "00:" + game.count + " secs");
-  }
-};
-//Function for switching to next question in array
-game.nextQ = function () {
-  game.current++;
-  clearInterval(window.triviaCounter);
-  game.count = 30;
-  $('#timer').html("");
-  setTimeout(function () {
-    game.cleanUp();
-    game.ask();
-  }, 1000)
-};
-//Removes previous question, displays score, moves onto next questions
-game.cleanUp = function () {
-  $('div[id]').each(function (item) {
-    $(this).html('');
-  });
-  //Displays number of correct and incorrect answers
-  $('.correct').html('Correct answers: ' + game.answers.correct);
-  $('.incorrect').html('Incorrect answers: ' + game.answers.incorrect);
-};
-game.answer = function (correct) {
-  var string = correct ? 'correct' : 'incorrect';
-  game.answers[string]++;
-  $('.' + string).html(string + ' answers: ' + game.answers[string]);
-};
-return game;
-};
-var Trivia;
-//Clears previous game results whens start button is clicked
-$("#start_button").click(function () {
-  $(this).hide();
-  $('.result').remove();
-  $('div').html('');
-  Trivia = new $(window).trivia();
-  Trivia.ask();
-});
 
-//Function for when user clicks a choice button..
-$('#choices_div').on('click', 'button', function () {
-  var userPick = $(this).data("id"),
-    game = Trivia || $(window).trivia(),
-    index = game.questions[game.current].correct,
-    correct = game.questions[game.current].choices[index];
-
-  //Conditional statement deciding what happens if choice is correct or incorrect
-  if (userPick !== index) {
-    $('#choices_div').text("Not even close!!! The correct answer was: " + correct);
-    game.answer(false);
-  } else {
-    $('#choices_div').text("You're goddamn right!!! The correct answer was: " + correct);
-    game.answer(true);
-    //FYI this is a famous quote that Walt says in the show, just staying true to my theme//
-  }
-  game.nextQ();
-});
+// CLICK EVENTS
+$(document).on('click', '#start', function() {
+  game.start();
+})
