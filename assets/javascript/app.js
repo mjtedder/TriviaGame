@@ -72,11 +72,13 @@ var game = {
     counter: 120,
     // Decrements timer and displays in HTML, ends game if counter reaches 0
     countdown: function() {
+      counter--;
 
     },
     // Starts timer
     start: function() {
       $('#question-div').text("WELCOME!");
+      countdown();
     },
     loadQ: function() {
 

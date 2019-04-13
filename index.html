@@ -1,40 +1,40 @@
 <!--Todo: Rewrite code using Bootstrap 4-->
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang='en-us'>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equv="X-UA-Compatible" content="ie=edge">
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equv='X-UA-Compatible' content='ie=edge'>
 
-  <!--Reset CSS not needed since using BootStrap-->
-  <!--BootStrap CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Reset CSS -->
+  <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
+  <!-- Custom CSS -->
+  <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+
+  <!--jQuery CDN-->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
   <!--Google Fonts-->
-  <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=East+Sea+Dokdo' rel='stylesheet'>
+
   <title>Breaking Bad Trivia Game</title>
 </head>
 
 <body>
 
-
-  <h1>BREAKING BAD TRIVIA GAME</h1>
-
-  <button id="start">start game</button>
-  <div id="timer"></div>
-  <div id="question-div"></div>
-  <div id="choices-div"></div>
-  <div id="results"></div>
-  <div class="correct"></div>
-  <div class="incorrect"></div>
+  <div id='wrapper'>
+    <h1>BREAKING BAD TRIVIA GAME</h1>
+    <div id='sub-wrapper'>
+      <div id='question-div'>
+        <button id='start'>START</button>
+      </div>
+    </div>
+  </div>
 
 
 </body>
-  <!--jQuery CDN-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
   <!--JavaScript-->
-  <script src="assets/javascript/app.js"></script>
+  <script src='assets/javascript/app.js'></script>
 
 </html>

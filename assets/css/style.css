@@ -1,6 +1,11 @@
 /*todo: Add more styling, bordered boxes around selections*/
 /*todo: Add images to game area*/
 /*todo: Try to get font downloaded displaying on page*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   height: 100%;
