@@ -64,7 +64,6 @@ var timer;
 
 // GAME OBJECT CONTAINING VARIABLES AND METHODS NEEDED TO PLAY
 var game = {
-    questions: questions,
     correct: 0,
     incorrect: 0,
     counter: 120,
@@ -72,14 +71,19 @@ var game = {
         // Starts timer
     start: function() {
       for (var i=0; i < questions.length; i++){
-          $('#sub-wrapper').append('<h1>' + questions[i].question + '</h1>');
+          $('#sub-wrapper').append('<p> ' + questions[i].question + ' </p>');
+          for (var j = 0; j < questions[i].choices.length; j++) {
+            $('#sub-wrapper').append("<input type='radio' name='question-'" + i + 'value=' + questions[i].choices[j] + ">" + questions[i].choices[j] + "</input>");
+          }
       }
-          $('#wrapper').append(game.counter);
+          $('#start').remove();
           game.countdown();
         },
     countdown: function() {
       game.counter--;
-
+      timer = setInterval(this.countdown, 1000);
+      console.log(game.counter);
+      $('#timer').html('<h1>' + game.counter + '</h1>');
     },
     done: function() {
 

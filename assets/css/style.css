@@ -7,12 +7,6 @@
   padding: 0;
 }
 
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 h1 {
   font-family: "East Sea Dokdo", cursive;
@@ -20,13 +14,8 @@ h1 {
   font-weight: bold;
   color: green;
   font-size: 50px;
-  float: right;
 }
 
-.game {
-background-color: rgba(192 192 182, 0.7);
-height: 500px;
-}
 
 /*Tried to link a truetype font downloaded from web
 /*@font-face {
@@ -40,7 +29,7 @@ button {
   font-size: 30px;
 }
 
-body {
+/* .wrapper {
   font-family: "East Sea Dokdo", cursive;
   min-height: 100%;
   background-image: url("../images/bbwallpaper2.jpg");
@@ -48,4 +37,4 @@ body {
   background-size: 100% 110%;
   color: white;
   font-size: 30px;
-}
+} */
