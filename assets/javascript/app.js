@@ -3,7 +3,7 @@
 
 // WHERE GAME APPEARS IN HTML
 var quizArea = $('#question-div')
-countStartNumber = 30
+countStartNumber = 120
 
 // QUESTIONS ARRAY OF OBJECTS
 var questions = [
@@ -65,40 +65,23 @@ var timer;
 // GAME OBJECT CONTAINING VARIABLES AND METHODS NEEDED TO PLAY
 var game = {
     questions: questions,
-    currentQuestion: 0,
-    counter: countStartNumber,
     correct: 0,
     incorrect: 0,
     counter: 120,
     // Decrements timer and displays in HTML, ends game if counter reaches 0
-    countdown: function() {
-      counter--;
-
-    },
-    // Starts timer
+        // Starts timer
     start: function() {
-      $('#question-div').text("WELCOME!");
-      countdown();
-    },
-    loadQ: function() {
-
-    },
-    nextQ: function() {
+      for (var i=0; i < questions.length; i++){
+          $('#sub-wrapper').append('<h1>' + questions[i].question + '</h1>');
+      }
+          $('#wrapper').append(game.counter);
+          game.countdown();
+        },
+    countdown: function() {
+      game.counter--;
 
     },
     done: function() {
-
-    },
-    timeUp: function() {
-
-    },
-    clicked: function(e) {
-
-    },
-    answeredRight: function() {
-
-    },
-    answeredWrong: function() {
 
     },
     result: function() {
