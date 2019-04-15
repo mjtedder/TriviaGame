@@ -6,8 +6,7 @@ var quizArea = $('#question-div')
 countStartNumber = 120
 
 // QUESTIONS ARRAY OF OBJECTS
-var questions = [
-  {
+var questions = [{
     question: "What city does the show take place?",
     choices: ["Des Moines", "Charlotte", "Albuquerque", "Denver"],
     correct: "Albuquerque"
@@ -64,36 +63,55 @@ var timer;
 
 // GAME OBJECT CONTAINING VARIABLES AND METHODS NEEDED TO PLAY
 var game = {
-    correct: 0,
-    incorrect: 0,
-    counter: 120,
-    // Decrements timer and displays in HTML, ends game if counter reaches 0
-        // Starts timer
-    start: function() {
-      for (var i=0; i < questions.length; i++){
-          $('#sub-wrapper').append('<p> ' + questions[i].question + ' </p>');
-          for (var j = 0; j < questions[i].choices.length; j++) {
-            $('#sub-wrapper').append("<input type='radio' name='question-'" + i + 'value=' + questions[i].choices[j] + ">" + questions[i].choices[j] + "</input>");
-          }
+  correct: 0,
+  incorrect: 0,
+  counter: 12,
+  // Decrements timer and displays in HTML, ends game if counter reaches 0
+  // Starts timer
+  start: function () {
+    $('#start').remove();
+    timer = setInterval(game.countdown, 1000);
+    game.countdown();
+    for (var i = 0; i < questions.length; i++) {
+      $('#sub-wrapper').append('<h2>' + questions[i].question + '</h2>');
+      for (var j = 0; j < questions[i].choices.length; j++) {
+        $('#sub-wrapper').append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "''>" + questions[i].choices[j]);
       }
-          $('#start').remove();
-          game.countdown();
-        },
-    countdown: function() {
-      game.counter--;
-      timer = setInterval(this.countdown, 1000);
-      console.log(game.counter);
-      $('#timer').html('<h1>' + game.counter + '</h1>');
-    },
-    done: function() {
-
-    },
-    result: function() {
-
     }
+  },
+  countdown: function () {
+    game.counter--;
+    // console.log(game.counter);
+    $('#timer').html('<h1>' + game.counter + '</h1>');
+    if (game.counter === 0) {
+      game.done();
+    }
+  },
+  done: function () {
+    clearInterval(timer);
+    $.each($('input[name="question-0"]:checked'), function () {
+      if ($(this).val() === questions[0].correct) {
+        console.log("CORRECT!");
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-1"]:checked'), function() {
+      if($(this).val() === questions[1].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+  },
+  result: function () {
+
   }
+}
 
 // CLICK EVENTS
-$(document).on('click', '#start', function() {
+$(document).on('click', '#start', function () {
   game.start();
 })
