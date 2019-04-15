@@ -69,7 +69,9 @@ var game = {
   // Decrements timer and displays in HTML, ends game if counter reaches 0
   // Starts timer
   start: function () {
-    $('#start').remove();
+    $('#start').hide();
+    $('#restart').hide();
+    $('#submit').show();
     timer = setInterval(game.countdown, 1000);
     game.countdown();
     for (var i = 0; i < questions.length; i++) {
@@ -105,13 +107,87 @@ var game = {
         game.incorrect++;
       }
     })
+    $.each($('input[name="question-2"]:checked'), function() {
+      if($(this).val() === questions[2].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-3"]:checked'), function() {
+      if($(this).val() === questions[3].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-4"]:checked'), function() {
+      if($(this).val() === questions[4].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-5"]:checked'), function() {
+      if($(this).val() === questions[5].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-6"]:checked'), function() {
+      if($(this).val() === questions[6].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-7"]:checked'), function() {
+      if($(this).val() === questions[7].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-8"]:checked'), function() {
+      if($(this).val() === questions[8].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    $.each($('input[name="question-9"]:checked'), function() {
+      if($(this).val() === questions[9].correct) {
+        game.correct++;
+      } else {
+        console.log("INCORRECT!");
+        game.incorrect++;
+      }
+    })
+    game.result();
   },
   result: function () {
-
+    $('#sub-wrapper').append('<h1>CORRECT: ' + game.correct + '</h1><br><h1>INCORRECT: ' + game.incorrect + '</h1>')
+    $('#restart').show();
   }
 }
 
 // CLICK EVENTS
-$(document).on('click', '#start', function () {
+$('#start').click(function () {
   game.start();
+})
+
+$('#submit').click(function() {
+  game.done();
+})
+
+$('#restart').click(function() {
+  location.reload();
 })
