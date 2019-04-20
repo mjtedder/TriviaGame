@@ -4,39 +4,37 @@
 
 <head>
   <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, shrink-to-fit=no'>
   <meta http-equv='X-UA-Compatible' content='ie=edge'>
-
-  <!-- Reset CSS -->
-  <link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
-  <!-- Custom CSS -->
-  <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
-
-  <!--jQuery CDN-->
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
   <!--Google Fonts-->
   <link href='https://fonts.googleapis.com/css?family=East+Sea+Dokdo' rel='stylesheet'>
-
+  <!-- Bootstrap 4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
   <title>Breaking Bad Trivia Game</title>
 </head>
 
 <body>
   <div id='wrapper'>
-    <h1>BREAKING BAD TRIVIA GAME</h1>
-    <div id='timer'></div>
-    <div id='sub-wrapper'>
-      <div id='question-div'>
-        <button id='start'>START</button>
-        <button id='submit'>SUBMIT</button>
-        <button id='restart'>TRY AGAIN</button>
-      </div>
-    </div>
+    <h1 class='item-1'>BREAKING BAD TRIVIA GAME</h1>
+    <button id='start'>START</button>
+    <button id='submit'>SUBMIT</button>
+    <button id='restart'>TRY AGAIN</button>
+    <div id='timer'>Timer here</div>
+    <div id='question-div'>Questions here</div>
+    <div id='results'>Results here</div>
   </div>
 
-
-</body>
-
+  <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+    crossorigin='anonymous'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
+    crossorigin="anonymous"></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
+    crossorigin='anonymous'></script>
   <!--JavaScript-->
   <script src='assets/javascript/app.js'></script>
+</body>
 
 </html>
