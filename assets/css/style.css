@@ -7,13 +7,21 @@
   padding: 0;
 }
 
+body {
+  background-image: url(../images/bbwallpaper1.jpg);
+  background-size: cover;
+}
+
+.jumbotron {
+  background-color: black;
+}
+
 h1 {
   font-family: "East Sea Dokdo", cursive;
   text-align: center;
   font-weight: bold;
   color: green;
   font-size: 50px;
-  border: 1px solid green;
 }
 
 

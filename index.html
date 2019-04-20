@@ -17,24 +17,39 @@
 </head>
 
 <body>
-  <div id='wrapper'>
-    <h1 class='item-1'>BREAKING BAD TRIVIA GAME</h1>
-    <button id='start'>START</button>
-    <button id='submit'>SUBMIT</button>
-    <button id='restart'>TRY AGAIN</button>
-    <div id='timer'>Timer here</div>
-    <div id='question-div'>Questions here</div>
-    <div id='results'>Results here</div>
-  </div>
+  <div class='container'>
+    <div class="container bg-dark my-5 px-5 pb-5 rounded border border-light">
+      <h1 class="text-center py-4">BREAKING BAD TRIVIAL PURSUIT</h1>
+      <button type='button' class='btn btn-success btn-lg btn-blk' id='start'>Start</button>
+      <button type='button' class='btn btn-danger btn-lg' id='submit'>Submit</button>
+      <button type='button' class='btn btn-warning btn-lg' id='restart'>Restart</button>
+    </div>
+    <div class="row mainSelection">
 
-  <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
-    crossorigin='anonymous'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
-    crossorigin="anonymous"></script>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
-    crossorigin='anonymous'></script>
-  <!--JavaScript-->
-  <script src='assets/javascript/app.js'></script>
+
+      <div class="row py-3">
+        <div class="col-lg-5" id="timer">
+          <h2 class="text-center">Timer here</h2>
+          <div class="yourCharacter mx-auto"></div>
+        </div>
+        <div class="col-lg-5" id="timer">
+          <h2 class="text-center">Questions here</h2>
+          <div class="yourCharacter mx-auto"></div>
+        </div>
+        <div class="col-lg-5 d-none" id="timer">
+          <h2 class="text-center">Results modal</h2>
+          <div class="yourCharacter mx-auto"></div>
+        </div>
+      </div>
+
+      <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+        crossorigin='anonymous'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q'
+        crossorigin="anonymous"></script>
+      <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl'
+        crossorigin='anonymous'></script>
+      <!--JavaScript-->
+      <script src='assets/javascript/app.js'></script>
 </body>
 
 </html>
