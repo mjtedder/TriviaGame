@@ -70,17 +70,17 @@ var game = {
   // Starts timer
   start: function () {
     $('#start').hide();
-    $('#restart').hide();
     $('#submit').show();
     timer = setInterval(game.countdown, 1000);
     game.countdown();
     for (var i = 0; i < questions.length; i++) {
       $('#questions').append('<h2>' + questions[i].question + '</h2>');
       for (var j = 0; j < questions[i].choices.length; j++) {
-        $('#questions').append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "''>" + questions[i].choices[j]);
+        $('#questions').append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "''>" + "     " + questions[i].choices[j] + "    ");
       }
     }
     $('#questions').removeClass('d-none');
+    $('#questions').css('color', 'white');
   },
   countdown: function () {
     game.counter--;
@@ -176,8 +176,8 @@ var game = {
     game.result();
   },
   result: function () {
-    $('#questions').append('<h1>CORRECT: ' + game.correct + '</h1><br><h1>INCORRECT: ' + game.incorrect + '</h1>')
-    $('#restart').show();
+    $('.modal-body').append('<h1>CORRECT: ' + game.correct + '</h1><br><h1>INCORRECT: ' + game.incorrect + '</h1>')
+    $('#resultModal').modal('show');
   }
 }
 
