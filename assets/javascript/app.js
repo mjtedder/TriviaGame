@@ -75,16 +75,18 @@ var game = {
     timer = setInterval(game.countdown, 1000);
     game.countdown();
     for (var i = 0; i < questions.length; i++) {
-      $('#sub-wrapper').append('<h2>' + questions[i].question + '</h2>');
+      $('#questions').append('<h2>' + questions[i].question + '</h2>');
       for (var j = 0; j < questions[i].choices.length; j++) {
-        $('#sub-wrapper').append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "''>" + questions[i].choices[j]);
+        $('#questions').append("<input type='radio' name='question-" + i + "' value='" + questions[i].choices[j] + "''>" + questions[i].choices[j]);
       }
     }
+    $('#questions').removeClass('d-none');
   },
   countdown: function () {
     game.counter--;
     // console.log(game.counter);
     $('#timer').html('<h1>' + game.counter + '</h1>');
+    $('#timer').removeClass('d-none');
     if (game.counter === 0) {
       game.done();
     }
@@ -174,7 +176,7 @@ var game = {
     game.result();
   },
   result: function () {
-    $('#sub-wrapper').append('<h1>CORRECT: ' + game.correct + '</h1><br><h1>INCORRECT: ' + game.incorrect + '</h1>')
+    $('#questions').append('<h1>CORRECT: ' + game.correct + '</h1><br><h1>INCORRECT: ' + game.incorrect + '</h1>')
     $('#restart').show();
   }
 }
